@@ -1,125 +1,150 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <style>
       body {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
       }
 
       #wires {
-display: flex;
+	display: flex;
         flex-direction: column;
-justify-content: center;
+	justify-content: center;
        }
-     
+      
       svg {
-width: 350px;
-height: 450px;
-}
+	width: 350px;
+	height: 450px;
+	}
 
       h1 {
-color: blue;
-font-family: cursive;
-text-align: center;
-}
+	color: blue;
+	font-family: cursive;
+	text-align: center;
+	}
 
       #head {
-animation: 0.90s ease-in-out 0s infinite alternate-reverse say-yes;
+	animation: 0.90s ease-in-out 0s infinite alternate-reverse say-yes;
       }
 
+      #background {
+	animation: moving-background 7s ease-in-out 1s forwards;
+       }
+	
+      .black-stroke {
+	stroke: black;
+	fill: none;
+      }
       .desaparecer {
-display: none;
-}
+	display: none;
+	}
 
       @keyframes say-yes {
-from {
-}
-100% {
- transform: rotate(-1deg) translate(-2px, 4px);
-
-}
+	from {
+	}
+	100% {
+	  transform: rotate(-1deg) translate(-2px, 4px);
+	 
+	}
       }
-     
+      @keyframes moving-background {
+	from {
+	}
+	to {
+	  transform: translate(300px);
+	}
+      }
     </style>
   </head>
   <body>
     <svg viewBox="0 0 350 450" xmlns="http://www.w3.org/2000/svg">
       <rect width="100%" height="100%" fill="transparent" stroke="#D00"/>
-      <g id="dino">
-<g id="head" stroke-linecap="round">
- <g id="cabello" fill="transparent" stroke="#000">
+      <g id="background" fill="transparent" stroke="black">
+	  <line x1="-1000" x2="350" y1="265" y2="265" />
+	  <g id="buildings">
+	    <rect x="210" y="115" height="150" width="75" fill="gray"/>
+	    <rect x="210" y="115" height="150" width="75" fill="gray" transform="translate(-200)" />
+          </g>
+          <g id="lamp" class="black-stroke">
+	    <line x1="145" x2="145" y1="205" y2="265" />
+	    <rect x="140" y="190" width="10" height="20" fill="yellow" />
+	  </g>
+	  
+      </g>
+      <g id="dino">  //THIS IS DINO
+	<g id="head" stroke-linecap="round">
+	  <g id="cara" fill="white" stroke="#000">
+		<path d="M 210 115 L 210 100 Q 230 90, 220 70 Q 215 65, 205 73
+		 M 210 100 L 210 110 Q 210 119, 200 130 L 155 165 Q 150 170, 145 170 
+		 L 139 171 Q 135 172, 130 168 L 110 150 Q 98 133, 95 130
+		 Q 90 122, 90 110 Q 85 60, 115 45" />
+	    	 <path d="M 119 40 Q 175 0, 240 30 Q 260 50, 250 100 Q 235 120, 220 120" />
+	  </g>
+          <g id="cabello" fill="transparent" stroke="#000">
             <path d="M 107 75 Q 107 55, 117 50" />
             <path d="M 112 74 Q 112 54, 121 49" />
             <path d="M 115 75 Q 117 55, 121 50" />
-   <line x1="122" x2="126" y1="75" y2="50" />
+	    <line x1="122" x2="126" y1="75" y2="50" />
             <line x1="127" x2="130" y1="77" y2="50" />
             <line x1="130" x2="132" y1="75" y2="50" />
-   <line x1="138" x2="137" y1="75" y2="49" />
+	    <line x1="138" x2="137" y1="75" y2="49" />
             <line x1="143" x2="142" y1="75" y2="50" />
             <line x1="150" x2="149" y1="74" y2="50" />
-   <line x1="155" x2="157" y1="72" y2="50" />
+	    <line x1="155" x2="157" y1="72" y2="50" />
             <line x1="160" x2="159" y1="75" y2="51" />
-   <line x1="166" x2="167" y1="75" y2="51" />
+	    <line x1="166" x2="167" y1="75" y2="51" />
             <line x1="171" x2="172" y1="77" y2="51" />
             <line x1="176" x2="176.5" y1="74" y2="54" />
-   <line x1="181" x2="179" y1="75" y2="51" />
-   <line x1="187" x2="185" y1="74" y2="51" />
-   <line x1="192" x2="193" y1="75" y2="51" />
-   <line x1="196" x2="197" y1="77" y2="51" />
-   <line x1="199" x2="200" y1="75" y2="51" />
-   <line x1="209" x2="207" y1="75" y2="48" />
-   <line x1="215" x2="216" y1="76" y2="51" />
-   <line x1="220" x2="221" y1="70" y2="45" />
-   <path d="M 218 119 Q 235 75, 226 48"/>
-   <line x1="233" x2="232" y1="75" y2="48" />
-   <path d="M 230 105 Q 246 75, 238 48"/>
-   <path d="M 235 112 Q 251 75, 243 45"/>
- </g>
- <g id="cara" fill="transparent" stroke="#000">
-<path d="M 210 115 L 210 100 Q 230 90, 220 70 Q 215 65, 205 73
-M 210 100 L 210 110 Q 210 119, 200 130 L 155 165 Q 150 170, 145 170
-L 139 171 Q 135 172, 130 168 L 110 150 Q 98 133, 95 130
-Q 90 122, 90 110 Q 85 60, 115 45" />
-    <path d="M 119 40 Q 175 0, 240 30 Q 260 50, 250 100 Q 235 120, 220 120" />
- </g>
+	    <line x1="181" x2="179" y1="75" y2="51" />
+	    <line x1="187" x2="185" y1="74" y2="51" />
+	    <line x1="192" x2="193" y1="75" y2="51" />
+	    <line x1="196" x2="197" y1="77" y2="51" />
+	    <line x1="199" x2="200" y1="75" y2="51" />
+	    <line x1="209" x2="207" y1="75" y2="48" />
+	    <line x1="215" x2="216" y1="76" y2="51" />
+	    <line x1="220" x2="221" y1="70" y2="45" />
+	    <path d="M 218 119 Q 235 75, 226 48"/>
+	    <line x1="233" x2="232" y1="75" y2="48" />
+	    <path d="M 230 105 Q 246 75, 238 48"/>
+	    <path d="M 235 112 Q 251 75, 243 45"/>
+	  </g>
+	  <g id="boca">
+		<path d="M 110 145 L 120 150 Q 123 152, 130 152 L 152 153
+		 Q 157 152, 162 140" fill="transparent" stroke="#000"/>
+		<path d="M 118 146 L 128 138 Q 133 153, 144 136 Q 150 145, 159 142" fill="transparent" stroke="#000"/>
+	  </g>
 
- <g id="boca">
-<path d="M 110 145 L 120 150 Q 123 152, 130 152 L 152 153
-Q 157 152, 162 140" fill="transparent" stroke="#000"/>
-<path d="M 118 146 L 128 138 Q 133 153, 144 136 Q 150 145, 159 142" fill="transparent" stroke="#000"/>
- </g>
-
- <g id="ojos" fill="transparent" stroke="black">
-<!-- Ojo izquierdo -->
-<path d="M 100 110 Q 105 97, 133 105" />
-<path d="M 111 103 C 109 108, 114 110, 116 104" />
-<!-- Ojo derecho -->
+	  <g id="ojos" fill="transparent" stroke="black">
+		<!-- Ojo izquierdo -->
+		<path d="M 100 110 Q 105 97, 133 105" />
+		<path d="M 111 103 C 109 108, 114 110, 116 104" />
+		<!-- Ojo derecho -->
             <g id="ojo-iz">
-<path d="M 150 107 Q 165 90, 175 108" />
-<path d="M 161 100.5 C 155 110, 165 107, 166 101.5" />
-   </g>
+		<path d="M 150 107 Q 165 90, 175 108" />
+		<path d="M 161 100.5 C 155 110, 165 107, 166 101.5" />
+	    </g>
             <line id="ojo-cerrado" class="desaparecer" x1="150" x2="175" y1="105" y2="105" />
- </g>
+	  </g>
+	
+	  <g id="nariz" fill="transparent" stroke="#000" transform="translate(0, 7)">
+		<path d="M 125 115 Q 130 120, 135 120 Q 138 120, 145 115 "/>
 
- <g id="nariz" fill="transparent" stroke="#000" transform="translate(0, 7)">
-<path d="M 125 115 Q 130 120, 135 120 Q 138 120, 145 115 "/>
-
- </g>
-</g>
+	  </g>
+	</g>
         <g id="cuello" fill="transparent" stroke="black">
-<path d="M 160 195 Q 175 175, 165 158" />
-<line x1="210" x2="210" y1="195" y2="115"/>
+		<path d="M 160 195 Q 175 175, 165 158" />
+		<line x1="210" x2="210" y1="195" y2="115"/>
         </g>
-<g id="cuerpo" fill="transparent" stroke="black">
- <path d="M 160 195 L 165 200"
-
-</g>
+	<g id="cuerpo" fill="green" stroke="black">
+	  <path d="M 160 195 L 120 220 L 74 224 L 63 228 L 67 235 L 158 248 
+L137 325 L 105 341 L 287 340 L 210 194" />
+	</g>
       </g>
-<circle id="point" cx="175" cy="0" r="1" fill="red"/>
+      <circle id="point" cx="175" cy="0" r="1" fill="red"/>	
     </svg>
     <h1>Dinosauro</h1>
     <h1>Master</h1>
@@ -130,68 +155,68 @@ Q 157 152, 162 140" fill="transparent" stroke="#000"/>
     </form>
     <div id="results">
     </div>
-   <script>
+
+    <script>
      // DINOSAURO
       let change = true;
       function random() {
         return Math.floor(Math.random()*360);
-}
+	}
 
       function changeColor(elemento) {
- elemento.setAttribute("stroke", `hsl(${random()} 50% 50%)`);
-};
+	  elemento.setAttribute("stroke", `hsl(${random()} 50% 50%)`);
+	};
      
 
       let eyes = document.getElementById("ojos");
-
+	
       function infiniteChange() {
-setTimeout(() => {
- changeColor(eyes);
-     infiniteChange();
-}, "1000");
+	setTimeout(() => {
+	  changeColor(eyes);
+   	  infiniteChange();
+	}, "1000");
       };
-
-infiniteChange();
+	
+	infiniteChange();
 
       /* eyes.addEventListener("mouseover", (event) => changeColor(event)); */
 
 
-let blink = true;
+	let blink = true;
       function closeEye() {
           let ojoIz = document.getElementById("ojo-iz");
- let ojoCer = document.getElementById("ojo-cerrado");
-if (blink) {
- ojoIz.classList.add("desaparecer");
- ojoCer.classList.remove("desaparecer");
- blink = !blink;
-} else {
- ojoIz.classList.remove("desaparecer");
- ojoCer.classList.add("desaparecer");
- blink = !blink;
+	  let ojoCer = document.getElementById("ojo-cerrado");
+	if (blink) {
+	  ojoIz.classList.add("desaparecer");
+	  ojoCer.classList.remove("desaparecer");
+	  blink = !blink;
+	} else {
+	  ojoIz.classList.remove("desaparecer");
+	  ojoCer.classList.add("desaparecer");
+	  blink = !blink;
            };
         };
 
       function infiniteBlink() {
-setTimeout(() => {
- closeEye();
-     infiniteBlink();
-}, "500");
+	setTimeout(() => {
+	  closeEye();
+   	  infiniteBlink();
+	}, "500");
       };
 
       infiniteBlink();
-
+	
       //REFERENCE POINT
-let svg = document.querySelector("svg");
-let point = document.getElementById("point");
+	let svg = document.querySelector("svg");
+	let point = document.getElementById("point");
+	
+	function drawPoint(event) {
+	  console.log("x", event.offsetX, "y", event.offsetY);
+	  point.setAttribute("cx", event.offsetX);
+	  point.setAttribute("cy", event.offsetY);
+	}
 
-function drawPoint(event) {
- console.log("x", event.offsetX);
- console.log("y", event.offsetY);
- point.setAttribute("cx", event.offsetX);
- point.setAttribute("cy", event.offsetY);
-}
-
-svg.addEventListener("click", drawPoint);
+	svg.addEventListener("click", drawPoint);
 
       //TREES
       let strands = document.getElementById("strands");
@@ -200,20 +225,20 @@ svg.addEventListener("click", drawPoint);
       let form = document.getElementById("wires");
       const newText = () => {
          return document.createElement("p");
-};
+	};
 
       function handleSubmit(event) {
         event.preventDefault();
-let confirmNumber = newText();
-confirmNumber.innerHTML = `You have ${strands.value} strands and ${leaves.value} leaves.`;
-results.appendChild(confirmNumber);
-       
+	let confirmNumber = newText();
+	confirmNumber.innerHTML = `You have ${strands.value} strands and ${leaves.value} leaves.`;
+	results.appendChild(confirmNumber);
+        
         let numberOfTwigs = newText();
-let computeTwigs = strands.value // leaves.value;
-numberOfTwigs.innerHTML = `You can make ${strands.value / leaves.value} twigs`;
-results.appendChild(numberOfTwigs);
-};
-     
+	let computeTwigs = strands.value // leaves.value;
+	numberOfTwigs.innerHTML = `You can make ${strands.value / leaves.value} twigs`;
+	results.appendChild(numberOfTwigs);
+	};
+      
       form.addEventListener('submit', handleSubmit);
 
     </script>
