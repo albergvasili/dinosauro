@@ -4,4 +4,4 @@ Of the dino saurial complexity
 
 Master Lu and Vasili are making art with SVG.
 
-[ENTER THE DINOSAURO](http://albergvasili.github.io/dinosauro.dinosauro.html)
+[ENTER THE DINOSAURO](https://albergvasili.github.io/dinosauro.dinosauro.html)
