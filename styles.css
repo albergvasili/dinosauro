@@ -1,0 +1,59 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#wires {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+    
+svg {
+  width: 350px;
+  height: 450px;
+}
+
+h1 {
+  color: blue;
+  font-family: cursive;
+  text-align: center;
+}
+
+#head {
+  animation: 0.90s ease-in-out 0s infinite alternate-reverse say-yes;
+}
+
+#background {
+  animation: moving-background 7s ease-in-out 1s forwards;
+}
+#chila {
+  height: 100px;
+  weight: 100px;
+}
+
+.black-stroke {
+  stroke: black;
+  fill: none;
+}
+.desaparecer {
+  display: none;
+}
+
+@keyframes say-yes {
+  from {
+  }
+  100% {
+    transform: rotate(-1deg) translate(-2px, 4px);
+  }
+}
+
+@keyframes moving-background {
+  from {
+  }
+  to {
+    transform: translate(300px);
+  }
+}
