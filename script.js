@@ -1,11 +1,11 @@
 // DINOSAURO
 let change = true;
-function random() {
-  return Math.floor(Math.random()*360);
+function random(max, min=0) {
+  return Math.floor(Math.random()* (max - min) + min);
 }
 
 function changeColor(elemento) {
-  elemento.setAttribute("stroke", `hsl(${random()} 50% 50%)`);
+  elemento.setAttribute("stroke", `hsl(${random(360)} 50% 50%)`);
 };
 
 let eyes = document.getElementById("ojos");
@@ -48,14 +48,20 @@ infiniteBlink();
 let buildings = document.getElementById("buildings"); 
 let building = document.getElementById("building");
 
-function create(distance) {
-  let build = building.cloneNode(true);
-  build.removeAttribute("id");
-  build.setAttribute("transform", `translate(-${distance})`);
-  buildings.appendChild(build);
+const build = {
+  position: 200,
+  building() {
+    for (let y = 0; y <= 10; y++) {
+      let build = building.cloneNode(true);
+      build.removeAttribute("id");
+      build.setAttribute("transform", `translate(-${this.position})`);
+      buildings.appendChild(build);
+      this.position += random(300, min=80);
+    };
+  }
 };
 
-create(500)
+build.building()
 
 //REFERENCE POINT
 let svg = document.querySelector("svg");
