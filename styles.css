@@ -35,10 +35,16 @@ h1 {
   weight: 100px;
 }
 
+.light {
+  fill: #FF75;
+  stroke: transparent;
+}
+
 .black-stroke {
   stroke: black;
   fill: none;
 }
+
 .desaparecer {
   display: none;
 }
