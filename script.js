@@ -63,6 +63,24 @@ const build = {
 
 build.building()
 
+let lamps = document.getElementById("lamps");
+let lamp = document.getElementById("lamp");
+
+const buildLamp = {
+  position: 145,
+  multiply(numberOfLamps, distance) {
+    for (let x = 0; x <= numberOfLamps; x++) {
+      let clone = lamp.cloneNode(true);
+      clone.removeAttribute("id");
+      clone.setAttribute("transform", `translate(-${this.position})`);
+      lamps.appendChild(clone);
+      this.position += distance;
+    };
+  }
+};
+
+buildLamp.multiply(20, 150);
+
 //REFERENCE POINT
 let svg = document.querySelector("svg");
 let point = document.getElementById("point");
