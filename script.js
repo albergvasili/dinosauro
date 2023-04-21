@@ -45,41 +45,22 @@ function infiniteBlink() {
 infiniteBlink();
 
 //BACKGROUND
-let buildings = document.getElementById("buildings"); 
-let building = document.getElementById("building");
 
-const build = {
-  position: 200,
-  building() {
-    for (let y = 0; y <= 10; y++) {
-      let build = building.cloneNode(true);
-      build.removeAttribute("id");
-      build.setAttribute("transform", `translate(-${this.position})`);
-      buildings.appendChild(build);
-      this.position += random(300, min=80);
-    };
-  }
-};
-
-build.building()
-
-let lamps = document.getElementById("lamps");
-let lamp = document.getElementById("lamp");
-
-const buildLamp = {
-  position: 145,
-  multiply(numberOfLamps, distance) {
-    for (let x = 0; x <= numberOfLamps; x++) {
-      let clone = lamp.cloneNode(true);
+function multiplier(elementId, parentId, amountOfElements, baseX, xFrequency) {
+  let element = document.getElementById(elementId);
+  let parent = document.getElementById(parentId);
+  let newBaseX = baseX;
+  for (let y = 0; y <= amountOfElements; y++) {
+      let clone = element.cloneNode(true);
       clone.removeAttribute("id");
-      clone.setAttribute("transform", `translate(-${this.position})`);
-      lamps.appendChild(clone);
-      this.position += distance;
-    };
-  }
+      clone.setAttribute("transform", `translate(${newBaseX})`);
+      parent.appendChild(clone);
+      newBaseX += xFrequency;
+  };
 };
 
-buildLamp.multiply(20, 150);
+multiplier("building", "buildings", 10, -200, random(-80, min=-300));
+multiplier("lamp", "lamps", 20, -145, -150);
 
 //REFERENCE POINT
 let svg = document.querySelector("svg");
