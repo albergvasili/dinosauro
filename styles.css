@@ -49,6 +49,22 @@ h1 {
   display: none;
 }
 
+#front-leg {
+  animation: 1s ease-in-out 1s infinite alternate-reverse walk;
+}
+
+#back-leg {
+  animation: 1s ease-in-out 0s infinite alternate-reverse walk;
+}
+
+@keyframes walk {
+  from {
+  }
+  to {
+    transform: rotate(-3deg);
+  }
+}
+
 @keyframes say-yes {
   from {
   }
