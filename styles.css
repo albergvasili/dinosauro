@@ -50,18 +50,20 @@ h1 {
 }
 
 #front-leg {
-  animation: 1s ease-in-out 1s infinite alternate-reverse walk;
+  animation: 1s ease-in-out 0s infinite alternate-reverse walk;
+  transform-origin: 230px 276px;
 }
 
 #back-leg {
-  animation: 1s ease-in-out 0s infinite alternate-reverse walk;
+  animation: 1s ease-in-out 1s infinite alternate-reverse walk;
+  transform-origin: 243px 256px;
 }
 
 @keyframes walk {
   from {
   }
   to {
-    transform: rotate(-3deg);
+    transform: rotate(-10deg);
   }
 }
 
