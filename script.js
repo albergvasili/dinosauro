@@ -46,21 +46,20 @@ infiniteBlink();
 
 //BACKGROUND
 
-function multiplier(elementId, parentId, amountOfElements, baseX, xFrequency) {
+function multiplier(elementId, amountOfElements, baseX, xFrequency) {
   let element = document.getElementById(elementId);
-  let parent = document.getElementById(parentId);
   let newBaseX = baseX;
   for (let y = 0; y <= amountOfElements; y++) {
       let clone = element.cloneNode(true);
       clone.removeAttribute("id");
       clone.setAttribute("transform", `translate(${newBaseX})`);
-      parent.appendChild(clone);
+      element.parentElement.appendChild(clone);
       newBaseX += xFrequency;
   };
 };
 
-multiplier("building", "buildings", 10, -200, random(-80, min=-300));
-multiplier("lamp", "lamps", 20, -145, -150);
+multiplier("building", 10, -200, random(-80, min=-300));
+multiplier("lamp", 20, -145, -150);
 
 //REFERENCE POINT
 let svg = document.querySelector("svg");
